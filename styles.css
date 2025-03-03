@@ -2,141 +2,112 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 
 body {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     background: black;
+    overflow: hidden;
     position: relative;
 }
 
-/* Corazones flotantes */
-body::before, body::after {
-    content: "❤️";
-    font-size: 30px;
+/* Contenedor de los corazones */
+.heart-container {
     position: absolute;
-    animation: float 5s infinite alternate ease-in-out;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-body::before {
-    top: 20%;
-    left: 10%;
-}
-
-body::after {
-    top: 60%;
-    right: 15%;
+/* Estilo de los corazones */
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 20px;
+    animation: float 5s infinite ease-in-out;
 }
 
 @keyframes float {
     0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
 }
 
-.card {
-    position: relative;
-    width: 300px;
-    height: 350px;
-    margin: 20px;
-}
-
-.card .face {
+/* Contenedor del video */
+.video-container {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: .5s;
-}
-
-.card .front {
-    transform: perspective(600px) rotateY(0deg);
-    box-shadow: 0 5px 10px #000;
-}
-
-.card .front img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.card .front h3 {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 45px;
-    line-height: 45px;
-    color: #fff;
-    background: rgba(0,0,0,.4);
-    text-align: center;
-}
-
-.card .back {
-    transform: perspective(600px) rotateY(180deg);
-    background: rgb(3, 35, 54);
-    padding: 15px;
-    color: #f3f3f3;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    box-shadow: 0 5px 10px #000;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
 }
 
-.card .back .link {
-    border-top: solid 1px #f3f3f3;
-    height: 50px;
-    line-height: 50px;
-}
-
-.card .back .link a {
-    color: #f3f3f3;
-}
-
-.card .back h3 {
-    font-size: 30px;
-    margin-top: 20px;
-    letter-spacing: 2px;
-}
-
-.card .back p {
-    letter-spacing: 1px;
-} 
-
-.card:hover .front {
-    transform: perspective(600px) rotateY(180deg);
-}
-
-.card:hover .back {
-    transform: perspective(600px) rotateY(360deg);
+.video {
+    width: 90%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
 
 
-.extra-link {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: black;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Contenedor de los corazones */
+.heart-container {
+    position: absolute;
     width: 100%;
-    text-align: center;
-    margin-top: 10px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.extra-link a {
-    font-size: 18px;
-    color: #f3f3f3;
-    text-decoration: none;
-    background: #ff4081;
-    padding: 10px 15px;
-    border-radius: 5px;
-    display: inline-block;
-    transition: 0.3s;
+/* Estilo de los corazones */
+.heart {
+    position: absolute;
+    color: red;
+    animation: float 3s infinite ease-in-out;
 }
 
-.extra-link a:hover {
-    background: #e91e63;
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Contenedor del video */
+.video-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.video {
+    width: 90%;
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
